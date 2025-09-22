@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; text-align: center; }
+        .container { max-width: 600px; margin: auto; padding: 2em; border: 1px solid #ccc; border-radius: 10px; }
+        .result { font-size: 2em; font-weight: bold; margin: 0.5em 0; }
+        .High { color: #D93444; }
+        .Moderate { color: #f0ad4e; }
+        .Low { color: #5cb85c; }
+        a { color: #337ab7; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>Based on the data provided, the model predicts:</p>
+        
+        <!-- The values 'prediction' and 'confidence' are passed from app.py -->
+        <div class="result {{ prediction.split(' ')[0] }}">
+            {{ prediction }}
+        </div>
+        
+        <p>Model Confidence: <strong>{{ confidence }}</strong></p>
+        
+        <br>
+        <a href="/">Make Another Prediction</a>
+    </div>
+</body>
+</html>
